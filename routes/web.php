@@ -94,15 +94,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('pay_now/{id}', 'PaymentController@pay_now')->name('payments.pay_now');
         });
 
-        /*************** Pins *****************/
-        Route::group(['prefix' => 'pins'], function(){
-            Route::get('create', 'PinController@create')->name('pins.create');
-            Route::get('/', 'PinController@index')->name('pins.index');
-            Route::post('/', 'PinController@store')->name('pins.store');
-            Route::get('enter/{id}', 'PinController@enter_pin')->name('pins.enter');
-            Route::post('verify/{id}', 'PinController@verify')->name('pins.verify');
-            Route::delete('/', 'PinController@destroy')->name('pins.destroy');
-        });
+
 
         /*************** Marks *****************/
         Route::group(['prefix' => 'marks'], function(){
