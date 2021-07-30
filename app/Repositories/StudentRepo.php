@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Helpers\Qs;
-use App\Models\Dorm;
+//use App\Models\Dorm;
 use App\Models\Promotion;
 use App\Models\StudentRecord;
 
@@ -75,10 +75,10 @@ class StudentRepo {
         return $this->gradStudents()->where($data)->with('user');
     }
 
-    public function getAllDorms()
+    /*public function getAllDorms()
     {
         return Dorm::orderBy('name', 'asc')->get();
-    }
+    }*/
 
     public function exists($student_id)
     {
