@@ -25,20 +25,20 @@ class UsersTableSeeder extends Seeder
 
     protected function createNewUsers()
     {
-        $password = Hash::make('123'); // Default user password
+        $password = Hash::make('cj'); // Default user password
 
         $d = [
 
-            ['name' => 'Super Admin',
-                'email' => 's@m.com',
-                'username' => 's',
+            ['name' => 'CJ Inspired',
+                'email' => 'cj@cj.com',
+                'username' => 'cj',
                 'password' => $password,
                 'user_type' => 'super_admin',
                 'code' => strtoupper(Str::random(10)),
                 'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Admin 1',
+            ['name' => 'Admin KORA',
             'email' => 'admin@admin.com',
             'password' => $password,
             'user_type' => 'admin',
@@ -47,7 +47,7 @@ class UsersTableSeeder extends Seeder
             'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Teacher 1',
+            ['name' => 'Teacher Chike',
                 'email' => 'teacher@teacher.com',
                 'user_type' => 'teacher',
                 'username' => 'teacher',
@@ -56,7 +56,7 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => Str::random(10),
             ],
 
-            ['name' => 'Parent 1',
+            ['name' => 'Parent Kaba',
                 'email' => 'parent@parent.com',
                 'user_type' => 'parent',
                 'username' => 'parent',
@@ -65,6 +65,14 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => Str::random(10),
             ],
 
+            ['name' => 'Accountant Jeff',
+                'email' => 'accountant@accountant.com',
+                'user_type' => 'accountant',
+                'username' => 'accountant',
+                'password' => $password,
+                'code' => strtoupper(Str::random(10)),
+                'remember_token' => Str::random(10),
+            ],
         ];
         DB::table('users')->insert($d);
     }

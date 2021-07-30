@@ -72,50 +72,50 @@
                                 <span class="font-weight-bold font-italic">M-D-Y or M/D/Y </span>
                             </div>
                         </div>
-{{--                        <div class="form-group row">--}}
-{{--                            <label for="lock_exam" class="col-lg-3 col-form-label font-weight-semibold">Lock Exam</label>--}}
-{{--                            <div class="col-lg-3">--}}
-{{--                                <select class="form-control select" name="lock_exam" id="lock_exam">--}}
-{{--                                    <option {{ $s['lock_exam'] ? 'selected' : '' }} value="1">Yes</option>--}}
-{{--                                    <option {{ $s['lock_exam'] ?: 'selected' }} value="0">No</option>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-lg-6">--}}
-{{--                                    <span class="font-weight-bold font-italic text-info-800">{{ __('msg.lock_exam') }}</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <div class="form-group row">
+                            <label for="lock_exam" class="col-lg-3 col-form-label font-weight-semibold">Lock Exam</label>
+                            <div class="col-lg-3">
+                                <select class="form-control select" name="lock_exam" id="lock_exam">
+                                    <option {{ $s['lock_exam'] ? 'selected' : '' }} value="1">Yes</option>
+                                    <option {{ $s['lock_exam'] ?: 'selected' }} value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6">
+                                    <span class="font-weight-bold font-italic text-info-800">{{ __('msg.lock_exam') }}</span>
+                            </div>
+                        </div>
                 </div>
                 <div class="col-md-6">
                     {{--Fees--}}
-{{--               <fieldset>--}}
-{{--                   <legend><strong>Next Term Fees</strong></legend>--}}
-{{--                   @foreach($class_types as $ct)--}}
-{{--                   <div class="form-group row">--}}
-{{--                       <label class="col-lg-3 col-form-label font-weight-semibold">{{ $ct->name }}</label>--}}
-{{--                       <div class="col-lg-9">--}}
-{{--                           <input class="form-control" value="{{ $s['next_term_fees_'.strtolower($ct->code)] }}" name="nt_fee_{{ strtolower($ct->code) }}" placeholder="{{ $ct->name }}" type="text">--}}
-{{--                       </div>--}}
-{{--                   </div>--}}
-{{--                       @endforeach--}}
-{{--               </fieldset>--}}
+               <fieldset>
+                   <legend><strong>Next Term Fees</strong></legend>
+                   @foreach($class_types as $ct)
+                   <div class="form-group row">
+                       <label class="col-lg-3 col-form-label font-weight-semibold">{{ $ct->name }}</label>
+                       <div class="col-lg-9">
+                           <input class="form-control" value="{{ $s['next_term_fees_'.strtolower($ct->code)] }}" name="nt_fee_{{ strtolower($ct->code) }}" placeholder="{{ $ct->name }}" type="text">
+                       </div>
+                   </div>
+                       @endforeach
+               </fieldset>
                     <hr class="divider">
 
                     {{--Logo--}}
-{{--                    <div class="form-group row">--}}
-{{--                        <label class="col-lg-3 col-form-label font-weight-semibold">Change Logo:</label>--}}
-{{--                        <div class="col-lg-9">--}}
-{{--                            <div class="mb-3">--}}
-{{--                                <img style="width: 100px" height="100px" src="{{ $s['logo'] }}" alt="">--}}
-{{--                            </div>--}}
-{{--                            <input name="logo" accept="image/*" type="file" class="file-input" data-show-caption="false" data-show-upload="false" data-fouc>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label font-weight-semibold">Change Logo:</label>
+                        <div class="col-lg-9">
+                            <div class="mb-3">
+                                <img style="width: 100px" height="100px" src="{{ $s['logo'] }}" alt="">
+                            </div>
+                            <input name="logo" accept="image/*" type="file" class="file-input" data-show-caption="false" data-show-upload="false" data-fouc>
+                        </div>
+                    </div>
                 </div>
             </div>
 
                 <hr class="divider">
 
-                <div class="text-left">
+                <div class="text-right">
                     <button type="submit" class="btn btn-danger">Submit form <i class="icon-paperplane ml-2"></i></button>
                 </div>
             </form>
