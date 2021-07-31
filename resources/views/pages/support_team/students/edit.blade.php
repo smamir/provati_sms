@@ -73,36 +73,36 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="nal_id">Nationality: <span class="text-danger">*</span></label>
-                                <select data-placeholder="Choose..." required name="nal_id" id="nal_id" class="select-search form-control">
-                                    <option value=""></option>
-                                    @foreach($nationals as $na)
-                                        <option {{  ($sr->user->nal_id  == $na->id ? 'selected' : '') }} value="{{ $na->id }}">{{ $na->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+{{--                        <div class="col-md-3">--}}
+{{--                            <div class="form-group">--}}
+{{--                                <label for="nal_id">Nationality: <span class="text-danger">*</span></label>--}}
+{{--                                <select data-placeholder="Choose..." required name="nal_id" id="nal_id" class="select-search form-control">--}}
+{{--                                    <option value=""></option>--}}
+{{--                                    @foreach($nationals as $na)--}}
+{{--                                        <option {{  ($sr->user->nal_id  == $na->id ? 'selected' : '') }} value="{{ $na->id }}">{{ $na->name }}</option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="col-md-3">
-                            <label for="state_id">State: <span class="text-danger">*</span></label>
-                            <select onchange="getLGA(this.value)" required data-placeholder="Choose.." class="select-search form-control" name="state_id" id="state_id">
-                                <option value=""></option>
-                                @foreach($states as $st)
-                                    <option {{ ($sr->user->state_id  == $st->id ? 'selected' : '') }} value="{{ $st->id }}">{{ $st->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                        <div class="col-md-3">--}}
+{{--                            <label for="state_id">State: <span class="text-danger">*</span></label>--}}
+{{--                            <select onchange="getLGA(this.value)" required data-placeholder="Choose.." class="select-search form-control" name="state_id" id="state_id">--}}
+{{--                                <option value=""></option>--}}
+{{--                                @foreach($states as $st)--}}
+{{--                                    <option {{ ($sr->user->state_id  == $st->id ? 'selected' : '') }} value="{{ $st->id }}">{{ $st->name }}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
 
-                        <div class="col-md-3">
-                            <label for="lga_id">LGA: <span class="text-danger">*</span></label>
-                            <select required data-placeholder="Select State First" class="select-search form-control" name="lga_id" id="lga_id">
-                                @if($sr->user->lga_id)
-                                    <option selected value="{{ $sr->user->lga_id }}">{{ $sr->user->lga->name}}</option>
-                                @endif
-                            </select>
-                        </div>
+{{--                        <div class="col-md-3">--}}
+{{--                            <label for="lga_id">LGA: <span class="text-danger">*</span></label>--}}
+{{--                            <select required data-placeholder="Select State First" class="select-search form-control" name="lga_id" id="lga_id">--}}
+{{--                                @if($sr->user->lga_id)--}}
+{{--                                    <option selected value="{{ $sr->user->lga_id }}">{{ $sr->user->lga->name}}</option>--}}
+{{--                                @endif--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
 
                     </div>
                     <div class="row">

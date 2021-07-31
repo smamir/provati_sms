@@ -6,7 +6,7 @@ use App\Helpers\Qs;
 use App\Helpers\Mk;
 use App\Http\Requests\Student\StudentRecordCreate;
 use App\Http\Requests\Student\StudentRecordUpdate;
-use App\Repositories\LocationRepo;
+
 use App\Repositories\MyClassRepo;
 use App\Repositories\StudentRepo;
 use App\Repositories\UserRepo;
@@ -20,12 +20,12 @@ class StudentRecordController extends Controller
 {
     protected $loc, $my_class, $user, $student;
 
-   public function __construct(LocationRepo $loc, MyClassRepo $my_class, UserRepo $user, StudentRepo $student)
+   public function __construct( MyClassRepo $my_class, UserRepo $user, StudentRepo $student)
    {
        $this->middleware('teamSA', ['only' => ['edit','update', 'reset_pass', 'create', 'store', 'graduated'] ]);
        $this->middleware('super_admin', ['only' => ['destroy',] ]);
 
-        $this->loc = $loc;
+        //$this->loc = $loc;
         $this->my_class = $my_class;
         $this->user = $user;
         $this->student = $student;
@@ -44,8 +44,8 @@ class StudentRecordController extends Controller
         $data['my_classes'] = $this->my_class->all();
         $data['parents'] = $this->user->getUserByType('parent');
         //$data['dorms'] = $this->student->getAllDorms();
-        $data['states'] = $this->loc->getStates();
-        $data['nationals'] = $this->loc->getAllNationals();
+        //$data['states'] = $this->loc->getStates();
+        //$data['nationals'] = $this->loc->getAllNationals();
         return view('pages.support_team.students.add', $data);
     }
 
@@ -135,8 +135,8 @@ class StudentRecordController extends Controller
         $data['my_classes'] = $this->my_class->all();
         $data['parents'] = $this->user->getUserByType('parent');
         //$data['dorms'] = $this->student->getAllDorms();
-        $data['states'] = $this->loc->getStates();
-        $data['nationals'] = $this->loc->getAllNationals();
+        //$data['states'] = $this->loc->getStates();
+        //$data['nationals'] = $this->loc->getAllNationals();
         return view('pages.support_team.students.edit', $data);
     }
 
