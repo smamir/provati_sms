@@ -6,9 +6,9 @@
             <th>S/N</th>
             <th>Name</th>
             <th>ADM_NO</th>
-            <th>1ST CA (20)</th>
-            <th>2ND CA (20)</th>
-            <th>EXAM (60)</th>
+            <th>1ST CT (20)</th>
+            <th>2ND CT (20)</th>
+            <th>Term Final (60)</th>
         </tr>
         </thead>
         <tbody>

@@ -1,16 +1,16 @@
 @extends('layouts.master')
-@section('page_title', 'Manage Exams')
+@section('page_title', 'Add or Edit Exams')
 @section('content')
 
     <div class="card">
-        <div class="card-header header-elements-inline">
-            <h6 class="card-title">Manage Exams</h6>
-            {!! Qs::getPanelOptions() !!}
-        </div>
+{{--        <div class="card-header header-elements-inline">--}}
+{{--            <h6 class="card-title">Manage Exams</h6>--}}
+{{--            {!! Qs::getPanelOptions() !!}--}}
+{{--        </div>--}}
 
         <div class="card-body">
             <ul class="nav nav-tabs nav-tabs-highlight">
-                <li class="nav-item"><a href="#all-exams" class="nav-link active" data-toggle="tab">Manage Exam</a></li>
+                <li class="nav-item"><a href="#all-exams" class="nav-link active" data-toggle="tab">Edit Exam</a></li>
                 <li class="nav-item"><a href="#new-exam" class="nav-link" data-toggle="tab"><i class="icon-plus2"></i> Add Exam</a></li>
             </ul>
 
@@ -86,15 +86,15 @@
                                     <label for="term" class="col-lg-3 col-form-label font-weight-semibold">Term</label>
                                     <div class="col-lg-9">
                                         <select data-placeholder="Select Teacher" class="form-control select-search" name="term" id="term">
-                                            <option {{ old('term') == 1 ? 'selected' : '' }} value="1">First Term</option>
-                                            <option {{ old('term') == 2 ? 'selected' : '' }} value="2">Second Term</option>
-                                            <option {{ old('term') == 3 ? 'selected' : '' }} value="3">Third Term</option>
+                                            <option {{ old('term') == 1 ? 'selected' : '' }} value="1">Term 1</option>
+                                            <option {{ old('term') == 2 ? 'selected' : '' }} value="2">Term 2</option>
+{{--                                            <option {{ old('term') == 3 ? 'selected' : '' }} value="3">Third Term</option>--}}
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Submit form <i class="icon-paperplane ml-2"></i></button>
+                                    <button type="submit" class="btn btn-outline-success">Submit<i class="icon-paperplane ml-2"></i></button>
                                 </div>
                             </form>
                         </div>
