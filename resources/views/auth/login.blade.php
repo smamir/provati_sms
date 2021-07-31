@@ -49,7 +49,7 @@
 {{--                            </div>--}}
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>
+                                <button type="submit" class="btn btn-block btn-secondary ">Login</i></button>
                             </div>
 
                            {{-- <div class="form-group">
