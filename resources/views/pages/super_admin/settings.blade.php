@@ -1,22 +1,22 @@
 @extends('layouts.master')
-@section('page_title', 'Manage System Settings')
+@section('page_title', 'Update System Info')
 @section('content')
 
     <div class="card">
-        <div class="card-header header-elements-inline">
-            <h6 class="card-title font-weight-semibold">Update System Settungs </h6>
-            {!! Qs::getPanelOptions() !!}
-        </div>
+{{--        <div class="card-header header-elements-inline">--}}
+{{--            <h6 class="card-title font-weight-semibold">Update System Settings </h6>--}}
+{{--            {!! Qs::getPanelOptions() !!}--}}
+{{--        </div>--}}
 
         <div class="card-body">
             <form enctype="multipart/form-data" method="post" action="{{ route('settings.update') }}">
                 @csrf @method('PUT')
             <div class="row">
-                <div class="col-md-6 border-right-2 border-right-blue-400">
+                <div class="col-md-12">
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label font-weight-semibold">Name of School <span class="text-danger">*</span></label>
+                            <label class="col-lg-3 col-form-label font-weight-semibold">School Name <span class="text-danger">*</span></label>
                             <div class="col-lg-9">
-                                <input name="system_name" value="{{ $s['system_name'] }}" required type="text" class="form-control" placeholder="Name of School">
+                                <input name="system_name" value="{{ $s['system_name'] }}" required type="text" class="form-control" placeholder="School Name">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -30,24 +30,25 @@
                                 </select>
                             </div>
                         </div>
+{{--                        <div class="form-group row">--}}
+{{--                            <label class="col-lg-3 col-form-label font-weight-semibold">School Acronym</label>--}}
+{{--                            <div class="col-lg-9">--}}
+{{--                                <input name="system_title" value="{{ $s['system_title'] }}" type="text" class="form-control" placeholder="School Acronym">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label font-weight-semibold">School Acronym</label>
+                            <label class="col-lg-3 col-form-label font-weight-semibold">Official Email</label>
                             <div class="col-lg-9">
-                                <input name="system_title" value="{{ $s['system_title'] }}" type="text" class="form-control" placeholder="School Acronym">
+                                <input name="system_email" value="{{ $s['system_email'] }}" type="email" class="form-control" placeholder="Official Email">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label font-weight-semibold">Phone</label>
-                            <div class="col-lg-9">
-                                <input name="phone" value="{{ $s['phone'] }}" type="text" class="form-control" placeholder="Phone">
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 col-form-label font-weight-semibold">Phone Number</label>
+                        <div class="col-lg-9">
+                            <input name="phone" value="{{ $s['phone'] }}" type="text" class="form-control" placeholder="Phone Number">
                         </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label font-weight-semibold">School Email</label>
-                            <div class="col-lg-9">
-                                <input name="system_email" value="{{ $s['system_email'] }}" type="email" class="form-control" placeholder="School Email">
-                            </div>
-                        </div>
+                    </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label font-weight-semibold">School Address <span class="text-danger">*</span></label>
                             <div class="col-lg-9">
@@ -55,21 +56,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label font-weight-semibold">This Term Ends</label>
-                            <div class="col-lg-6">
-                                <input name="term_ends" value="{{ $s['term_ends'] }}" type="text" class="form-control date-pick" placeholder="Date Term Ends">
-                            </div>
-                            <div class="col-lg-3 mt-2">
-                                <span class="font-weight-bold font-italic">M-D-Y or M/D/Y </span>
+                            <label class="col-lg-3 col-form-label font-weight-semibold">Current Session Ends</label>
+                            <div class="col-lg-9">
+                                <input name="term_ends" value="{{ $s['term_ends'] }}" type="text" class="form-control date-pick" placeholder="Current Session Ends">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label font-weight-semibold">Next Term Begins</label>
-                            <div class="col-lg-6">
-                                <input name="term_begins" value="{{ $s['term_begins'] }}" type="text" class="form-control date-pick" placeholder="Date Term Ends">
-                            </div>
-                            <div class="col-lg-3 mt-2">
-                                <span class="font-weight-bold font-italic">M-D-Y or M/D/Y </span>
+                            <label class="col-lg-3 col-form-label font-weight-semibold">Next Session Starts</label>
+                            <div class="col-lg-9">
+                                <input name="term_begins" value="{{ $s['term_begins'] }}" type="text" class="form-control date-pick" placeholder="Next Session Starts">
                             </div>
                         </div>
 {{--                        <div class="form-group row">--}}
@@ -85,8 +80,8 @@
 {{--                            </div>--}}
 {{--                        </div>--}}
                 </div>
-                <div class="col-md-6">
-                    {{--Fees--}}
+{{--                <div class="col-md-6">--}}
+{{--                    --}}{{--Fees--}}
 {{--               <fieldset>--}}
 {{--                   <legend><strong>Next Term Fees</strong></legend>--}}
 {{--                   @foreach($class_types as $ct)--}}
@@ -98,9 +93,9 @@
 {{--                   </div>--}}
 {{--                       @endforeach--}}
 {{--               </fieldset>--}}
-                    <hr class="divider">
+{{--                    <hr class="divider">--}}
 
-                    {{--Logo--}}
+{{--                    --}}{{--Logo--}}
 {{--                    <div class="form-group row">--}}
 {{--                        <label class="col-lg-3 col-form-label font-weight-semibold">Change Logo:</label>--}}
 {{--                        <div class="col-lg-9">--}}
@@ -110,13 +105,13 @@
 {{--                            <input name="logo" accept="image/*" type="file" class="file-input" data-show-caption="false" data-show-upload="false" data-fouc>--}}
 {{--                        </div>--}}
 {{--                    </div>--}}
-                </div>
+{{--                </div>--}}
             </div>
 
                 <hr class="divider">
 
                 <div class="text-left">
-                    <button type="submit" class="btn btn-danger">Submit form <i class="icon-paperplane ml-2"></i></button>
+                    <button type="submit" class="btn btn-success">Submit form <i class="icon-paperplane ml-2"></i></button>
                 </div>
             </form>
         </div>
