@@ -9,9 +9,7 @@ class CreateFks extends Migration
 
     public function up()
     {
-        Schema::table('lgas', function (Blueprint $table) {
-            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
-        });
+
 
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('state_id')->references('id')->on('states')->onDelete('set null');

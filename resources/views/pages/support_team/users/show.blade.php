@@ -65,24 +65,24 @@
                                         <td>{{$user->blood_group->name }}</td>
                                     </tr>
                                 @endif
-                                @if($user->nal_id)
-                                    <tr>
-                                        <td class="font-weight-bold">Nationality</td>
-                                        <td>{{$user->nationality->name }}</td>
-                                    </tr>
-                                @endif
-                                @if($user->state_id)
-                                    <tr>
-                                        <td class="font-weight-bold">State</td>
-                                        <td>{{$user->state->name }}</td>
-                                    </tr>
-                                @endif
-                                @if($user->lga_id)
-                                    <tr>
-                                        <td class="font-weight-bold">LGA</td>
-                                        <td>{{$user->lga->name }}</td>
-                                    </tr>
-                                @endif
+{{--                                @if($user->nal_id)--}}
+{{--                                    <tr>--}}
+{{--                                        <td class="font-weight-bold">Nationality</td>--}}
+{{--                                        <td>{{$user->nationality->name }}</td>--}}
+{{--                                    </tr>--}}
+{{--                                @endif--}}
+{{--                                @if($user->state_id)--}}
+{{--                                    <tr>--}}
+{{--                                        <td class="font-weight-bold">State</td>--}}
+{{--                                        <td>{{$user->state->name }}</td>--}}
+{{--                                    </tr>--}}
+{{--                                @endif--}}
+{{--                                @if($user->lga_id)--}}
+{{--                                    <tr>--}}
+{{--                                        <td class="font-weight-bold">LGA</td>--}}
+{{--                                        <td>{{$user->lga->name }}</td>--}}
+{{--                                    </tr>--}}
+{{--                                @endif--}}
                                 @if($user->user_type == 'parent')
                                     <tr>
                                         <td class="font-weight-bold">Children/Ward</td>
