@@ -11,7 +11,7 @@
 
             <form method="post" enctype="multipart/form-data" class="wizard-form steps-validation ajax-update" data-reload="#ajax-title" action="{{ route('students.update', Qs::hash($sr->id)) }}" data-fouc>
                 @csrf @method('PUT')
-                <h6>Personal data</h6>
+                <h6>Personal Data</h6>
                 <fieldset>
                     <div class="row">
                         <div class="col-md-6">
@@ -32,7 +32,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Email address: <span class="text-danger">*</span></label>
+                                <label>Email Address: <span class="text-danger">*</span></label>
                                 <input value="{{ $sr->user->email  }}" type="email" name="email" class="form-control" placeholder="your@email.com">
                             </div>
                         </div>
@@ -65,11 +65,31 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Date of Birth:</label>
                                 <input name="dob" value="{{ $sr->user->dob  }}" type="text" class="form-control date-pick" placeholder="Select Date...">
 
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="bg_id">Blood Group: </label>
+                                <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
+                                    <option value=""></option>
+                                    @foreach(App\Models\BloodGroup::all() as $bg)
+                                        <option {{ ($sr->user->bg_id  == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="d-block">Upload Passport Photo:</label>
+                                <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
+                                <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
                             </div>
                         </div>
 
@@ -106,25 +126,9 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="bg_id">Blood Group: </label>
-                                <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
-                                    <option value=""></option>
-                                    @foreach(App\Models\BloodGroup::all() as $bg)
-                                        <option {{ ($sr->user->bg_id  == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="d-block">Upload Passport Photo:</label>
-                                <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
-                                <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
-                            </div>
-                        </div>
+
+
                     </div>
 
                 </fieldset>

@@ -64,7 +64,7 @@
 
                     <div class="row">
                         @if(in_array($user->user_type, Qs::getStaff()))
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Date of Employment:</label>
                                     <input autocomplete="off" name="emp_date" value="{{ $user->staff->first()->emp_date }}" type="text" class="form-control date-pick" placeholder="Select Date...">
@@ -73,7 +73,7 @@
                             </div>
                         @endif
 
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="gender">Gender: <span class="text-danger">*</span></label>
                                 <select class="select form-control" id="gender" name="gender" required data-fouc data-placeholder="Choose..">
@@ -83,6 +83,26 @@
                                 </select>
                             </div>
                         </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="bg_id">Blood Group: </label>
+                                    <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
+                                        <option value=""></option>
+                                        @foreach($blood_groups as $bg)
+                                            <option {{ ($user->bg_id == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="d-block">Upload Passport Photo:</label>
+                                    <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
+                                    <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
+                                </div>
+                            </div>
 
 {{--                        <div class="col-md-4">--}}
 {{--                            <div class="form-group">--}}
@@ -125,29 +145,13 @@
 {{--                            </select>--}}
 {{--                        </div>--}}
 
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="bg_id">Blood Group: </label>
-                                <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
-                                    <option value=""></option>
-                                    @foreach($blood_groups as $bg)
-                                        <option {{ ($user->bg_id == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
+
 
                     </div>
 
                     {{--Passport--}}
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="d-block">Upload Passport Photo:</label>
-                                <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
-                                <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
-                            </div>
-                        </div>
+
                     </div>
 
                 </fieldset>

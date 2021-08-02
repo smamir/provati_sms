@@ -29,7 +29,7 @@
                         <th>S/N</th>
                         <th>Photo</th>
                         <th>Name</th>
-                        <th>ADM_No</th>
+                        <th>Admission No</th>
                         <th>Section</th>
                         <th>Grad Year</th>
                         <th>Action</th>
@@ -62,7 +62,7 @@
                                             <form method="post" id="ng-{{ Qs::hash($s->id) }}" action="{{ route('st.not_graduated', Qs::hash($s->id)) }}" class="hidden">@csrf @method('put')</form>
                                         @endif
 
-                                        <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>
+{{--                                        <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>--}}
 
                                         {{--Delete--}}
                                         @if(Qs::userIsSuperAdmin())
@@ -119,7 +119,7 @@
                                                 <form method="post" id="ng-{{ Qs::hash($s->id) }}" action="{{ route('st.not_graduated', Qs::hash($s->id)) }}" class="hidden">@csrf @method('put')</form>
                                             @endif
 
-                                            <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>
+{{--                                            <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>--}}
 
                                             {{--Delete--}}
                                             @if(Qs::userIsSuperAdmin())

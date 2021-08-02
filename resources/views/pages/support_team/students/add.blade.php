@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Email address: </label>
+                                <label>Email Address: </label>
                                 <input type="email" value="{{ old('email') }}" name="email" class="form-control" placeholder="Email Address">
                             </div>
                         </div>
@@ -64,11 +64,31 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label>Date of Birth:</label>
                                 <input name="dob" value="{{ old('dob') }}" type="text" class="form-control date-pick" placeholder="Select Date...">
 
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="bg_id">Blood Group: </label>
+                                <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
+                                    <option value=""></option>
+                                    @foreach(App\Models\BloodGroup::all() as $bg)
+                                        <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="d-block">Upload Passport Photo:</label>
+                                <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
+                                <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
                             </div>
                         </div>
 
@@ -103,25 +123,9 @@
                     </div>
                     <div class="row">
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="bg_id">Blood Group: </label>
-                                <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
-                                    <option value=""></option>
-                                    @foreach(App\Models\BloodGroup::all() as $bg)
-                                        <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="d-block">Upload Passport Photo:</label>
-                                <input value="{{ old('photo') }}" accept="image/*" type="file" name="photo" class="form-input-styled" data-fouc>
-                                <span class="form-text text-muted">Accepted Images: jpeg, png. Max file size 2Mb</span>
-                            </div>
-                        </div>
+
+
                     </div>
 
                 </fieldset>
@@ -164,7 +168,7 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="year_admitted">Year Admitted: <span class="text-danger">*</span></label>
+                                <label for="year_admitted">Year of Admission: <span class="text-danger">*</span></label>
                                 <select data-placeholder="Choose..." required name="year_admitted" id="year_admitted" class="select-search form-control">
                                     <option value=""></option>
                                     @for($y=date('Y', strtotime('- 10 years')); $y<=date('Y'); $y++)
@@ -196,7 +200,7 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Sport House:</label>
+                                <label>Sports House:</label>
                                 <input type="text" name="house" placeholder="Sport House" class="form-control" value="{{ old('house') }}">
                             </div>
                         </div>

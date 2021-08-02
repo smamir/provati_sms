@@ -29,7 +29,7 @@
                             <th>S/N</th>
                             <th>Photo</th>
                             <th>Name</th>
-                            <th>ADM_No</th>
+                            <th>Admission No</th>
                             <th>Section</th>
                             <th>Email</th>
                             <th>Action</th>
@@ -57,7 +57,7 @@
                                                     <a href="{{ route('students.edit', Qs::hash($s->id)) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
                                                     <a href="{{ route('st.reset_pass', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-lock"></i> Reset password</a>
                                                 @endif
-                                                <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>
+{{--                                                <a target="_blank" href="{{ route('marks.year_selector', Qs::hash($s->user->id)) }}" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>--}}
 
                                                 {{--Delete--}}
                                                 @if(Qs::userIsSuperAdmin())
@@ -81,7 +81,7 @@
                                 <th>S/N</th>
                                 <th>Photo</th>
                                 <th>Name</th>
-                                <th>ADM_No</th>
+                                <th>Admission No</th>
                                 <th>Email</th>
                                 <th>Action</th>
                             </tr>
@@ -107,7 +107,7 @@
                                                         <a href="{{ route('students.edit', Qs::hash($sr->id)) }}" class="dropdown-item"><i class="icon-pencil"></i> Edit</a>
                                                         <a href="{{ route('st.reset_pass', Qs::hash($sr->user->id)) }}" class="dropdown-item"><i class="icon-lock"></i> Reset password</a>
                                                     @endif
-                                                    <a href="#" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>
+{{--                                                    <a href="#" class="dropdown-item"><i class="icon-check"></i> Marksheet</a>--}}
 
                                                     {{--Delete--}}
                                                     @if(Qs::userIsSuperAdmin())

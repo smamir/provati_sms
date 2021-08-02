@@ -111,6 +111,17 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="bg_id">Blood Group: </label>
+                                        <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
+                                            <option value=""></option>
+                                            @foreach($blood_groups as $bg)
+                                                <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
 
 {{--                                <div class="col-md-3">--}}
 {{--                                    <div class="form-group">--}}
@@ -144,17 +155,7 @@
 {{--                                    </select>--}}
 {{--                                </div>--}}
                                 {{--BLOOD GROUP--}}
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="bg_id">Blood Group: </label>
-                                        <select class="select form-control" id="bg_id" name="bg_id" data-fouc data-placeholder="Choose..">
-                                            <option value=""></option>
-                                            @foreach($blood_groups as $bg)
-                                                <option {{ (old('bg_id') == $bg->id ? 'selected' : '') }} value="{{ $bg->id }}">{{ $bg->name }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+
 
                             </div>
 

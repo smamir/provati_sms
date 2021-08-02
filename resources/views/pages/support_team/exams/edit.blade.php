@@ -26,13 +26,13 @@
                                 <select data-placeholder="Select Teacher" class="form-control select-search" name="term" id="term">
                                     <option {{ $ex->term == 1 ? 'selected' : '' }} value="1">First Term</option>
                                     <option {{ $ex->term == 2 ? 'selected' : '' }} value="2">Second Term</option>
-                                    <option {{ $ex->term == 3 ? 'selected' : '' }} value="3">Third Term</option>
+{{--                                    <option {{ $ex->term == 3 ? 'selected' : '' }} value="3">Third Term</option>--}}
                                 </select>
                             </div>
                         </div>
 
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary">Submit form <i class="icon-paperplane ml-2"></i></button>
+                            <button type="submit" class="btn btn-primary">Submit<i class="icon-paperplane ml-2"></i></button>
                         </div>
                     </form>
                 </div>
