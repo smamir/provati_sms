@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('page_title', 'Manage Exam Marks')
+@section('page_title', 'Add or Edit Marks')
 @section('content')
     <div class="card">
 {{--        <div class="card-header header-elements-inline">--}}

@@ -148,29 +148,36 @@
                             </li>
 
                             {{--Tabulation Sheet--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.tabulation') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.tabulation']) ? 'active' : '' }}">Tabulation Sheet</a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a href="{{ route('marks.tabulation') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.tabulation']) ? 'active' : '' }}">Tabulation Sheet</a>--}}
+{{--                            </li>--}}
 
                             {{--Marks Batch Fix--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.batch_fix') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.batch_fix']) ? 'active' : '' }}">Batch Fix</a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a href="{{ route('marks.batch_fix') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.batch_fix']) ? 'active' : '' }}">Batch Fix</a>--}}
+{{--                            </li>--}}
                         @endif
 
                         @if(Qs::userIsTeamSAT())
                             {{--Marks Manage--}}
                             <li class="nav-item">
                                 <a href="{{ route('marks.index') }}"
-                                   class="nav-link {{ in_array(Route::currentRouteName(), ['marks.index']) ? 'active' : '' }}">Marks</a>
+                                   class="nav-link {{ in_array(Route::currentRouteName(), ['marks.index']) ? 'active' : '' }}">Add Marks</a>
                             </li>
 
                             {{--Marksheet--}}
-                            <li class="nav-item">
-                                <a href="{{ route('marks.bulk') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.bulk', 'marks.show']) ? 'active' : '' }}">Marksheet</a>
-                            </li>
-
+{{--                            <li class="nav-item">--}}
+{{--                                <a href="{{ route('marks.bulk') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.bulk', 'marks.show']) ? 'active' : '' }}">Marksheet</a>--}}
+{{--                            </li>--}}
                             @endif
+
+                            @if(Qs::userIsTeamSA())
+                                <li class="nav-item">
+                                    <a href="{{ route('marks.tabulation') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['marks.tabulation']) ? 'active' : '' }}">Show Marks</a>
+                                </li>
+                            @endif
+
+
 
                     </ul>
                 </li>
