@@ -8,67 +8,52 @@
             <h4 class="mb-2 pb-2 text-center text-blue-300 ">Please select an action from left sidebar menu... </h4>
         </div>
     </div>
-    @if(Qs::userIsTeamSA())
+    @if(Qs::userIsTeamSAT())
        <div class="row">
-           <div class="col-md-6">
-               <div class="card card-body bg-brown-300 has-bg-image">
-                   <div class="media">
-                       <div class="media-body">
-                           <h3 class="mb-0">{{ $users->where('user_type', 'student')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs font-weight-bold">Total Students</span>
-                       </div>
 
-                       <div class="ml-3 align-self-center">
-                           <i class="icon-users2 icon-3x opacity-75"></i>
-                       </div>
+           <div class="col-md-6">
+               <div class="card">
+                   <div class="card-body">
+                       <h4 class="card-title ml-3">System Stats</h4>
+
+                       <table class="table">
+
+                           <tbody>
+                           <tr>
+                               <td>Super Admin</td>
+                               <td>{{ $users->where('user_type', 'super_admin')->count() }}</td>
+                           </tr>
+                           <tr>
+                               <td>Admin</td>
+                               <td>{{ $users->where('user_type', 'admin')->count() }}</td>
+                           </tr>
+                           <tr>
+                               <td>Teacher</td>
+                               <td>{{ $users->where('user_type', 'teacher')->count() }}</td>
+                           </tr>
+                           <tr>
+                               <td>Student</td>
+                               <td>{{ $users->where('user_type', 'student')->count() }}</td>
+                           </tr>
+                           <tr>
+                               <td>Parent</td>
+                               <td>{{ $users->where('user_type', 'parent')->count() }}</td>
+                           </tr>
+                           <tr>
+                               <td>Total Classes</td>
+                               <td>{{DB::table('my_classes')->select('id')->distinct()->get()->count()}}</td>
+                           </tr>
+                           <tr>
+                               <td>Total Sections</td>
+                               <td>{{DB::table('sections')->select('id')->distinct()->get()->count()}}</td>
+                           </tr>
+
+                           </tbody>
+                       </table>
+
                    </div>
                </div>
            </div>
-
-           <div class="col-md-6">
-               <div class="card card-body bg-indigo-300 has-bg-image">
-                   <div class="media">
-                       <div class="media-body">
-                           <h3 class="mb-0">{{ $users->where('user_type', 'teacher')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Total Teachers</span>
-                       </div>
-
-                       <div class="ml-3 align-self-center">
-                           <i class="icon-users2 icon-3x opacity-75"></i>
-                       </div>
-                   </div>
-               </div>
-           </div>
-
-{{--           <div class="col-sm-6 col-xl-3">--}}
-{{--               <div class="card card-body bg-success-400 has-bg-image">--}}
-{{--                   <div class="media">--}}
-{{--                       <div class="mr-3 align-self-center">--}}
-{{--                           <i class="icon-pointer icon-3x opacity-75"></i>--}}
-{{--                       </div>--}}
-
-{{--                       <div class="media-body text-right">--}}
-{{--                           <h3 class="mb-0">{{ $users->where('user_type', 'admin')->count() }}</h3>--}}
-{{--                           <span class="text-uppercase font-size-xs">Total Administrators</span>--}}
-{{--                       </div>--}}
-{{--                   </div>--}}
-{{--               </div>--}}
-{{--           </div>--}}
-
-{{--           <div class="col-sm-6 col-xl-3">--}}
-{{--               <div class="card card-body bg-indigo-400 has-bg-image">--}}
-{{--                   <div class="media">--}}
-{{--                       <div class="mr-3 align-self-center">--}}
-{{--                           <i class="icon-user icon-3x opacity-75"></i>--}}
-{{--                       </div>--}}
-
-{{--                       <div class="media-body text-right">--}}
-{{--                           <h3 class="mb-0">{{ $users->where('user_type', 'parent')->count() }}</h3>--}}
-{{--                           <span class="text-uppercase font-size-xs">Total Parents</span>--}}
-{{--                       </div>--}}
-{{--                   </div>--}}
-{{--               </div>--}}
-{{--           </div>--}}
        </div>
        @endif
 
