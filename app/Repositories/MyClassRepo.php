@@ -139,4 +139,14 @@ class MyClassRepo
         return Subject::orderBy('name', 'asc')->with(['my_class', 'teacher'])->get();
     }
 
+    public function getClassCount()
+    {
+        return MyClass::count();
+    }
+
+    public function getSectionCount()
+    {
+        return Section::count();
+    }
+
 }

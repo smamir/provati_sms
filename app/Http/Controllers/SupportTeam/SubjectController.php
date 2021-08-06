@@ -53,7 +53,8 @@ class SubjectController extends Controller
         $data = $req->all();
         $this->my_class->updateSubject($id, $data);
 
-        return Qs::jsonUpdateOk();
+        return redirect()->route('subjects.index');
+
     }
 
     public function destroy($id)

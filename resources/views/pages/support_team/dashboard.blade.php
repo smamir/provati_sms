@@ -41,11 +41,11 @@
                            </tr>
                            <tr>
                                <td>Total Classes</td>
-                               <td>{{DB::table('my_classes')->select('id')->distinct()->get()->count()}}</td>
+                               <td>{{$classes}}</td>
                            </tr>
                            <tr>
                                <td>Total Sections</td>
-                               <td>{{DB::table('sections')->select('id')->distinct()->get()->count()}}</td>
+                               <td>{{$sections}}</td>
                            </tr>
 
                            </tbody>
