@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header header-elements-inline">
             <h6 class="card-title">Manage Users</h6>
-            {!! Qs::getPanelOptions() !!}
+{{--            {!! Qs::getPanelOptions() !!}--}}
         </div>
 
         <div class="card-body">
@@ -57,7 +57,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Email address: </label>
+                                        <label>Email Address: </label>
                                         <input value="{{ old('email') }}" type="email" name="email" class="form-control" placeholder="your@email.com">
                                     </div>
                                 </div>

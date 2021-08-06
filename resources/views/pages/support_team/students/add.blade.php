@@ -3,9 +3,9 @@
 @section('content')
         <div class="card">
             <div class="card-header bg-white header-elements-inline">
-                <h6 class="card-title">Please fill The form Below To Admit A New Student</h6>
+                <h6 class="card-title">Admit a new student</h6>
 
-                {!! Qs::getPanelOptions() !!}
+{{--                {!! Qs::getPanelOptions() !!}--}}
             </div>
 
             <form id="ajax-reg" method="post" enctype="multipart/form-data" class="wizard-form steps-validation" action="{{ route('students.store') }}" data-fouc>

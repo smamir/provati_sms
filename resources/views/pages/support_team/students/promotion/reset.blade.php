@@ -3,18 +3,17 @@
 @section('content')
 
     {{--Reset All--}}
-    <div class="card">
-        <div class="card-body text-center
-">
-            <button id="promotion-reset-all" class="btn btn-danger btn-large">Reset All Promotions for the Session</button>
-        </div>
-    </div>
+{{--    <div class="card">--}}
+{{--        <div class="card-body text-center">--}}
+{{--            <button id="promotion-reset-all" class="btn btn-danger btn-large">Reset All Promotions for the Session</button>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 
 {{-- Reset Promotions --}}
     <div class="card">
         <div class="card-header header-elements-inline">
             <h5 class="card-title font-weight-bold">Students who were promoted from <span class="text-danger">{{ $old_year }}</span> to <span class="text-success">{{ $new_year }}</span> Session</h5>
-            {!! Qs::getPanelOptions() !!}
+{{--            {!! Qs::getPanelOptions() !!}--}}
         </div>
 
         <div class="card-body">

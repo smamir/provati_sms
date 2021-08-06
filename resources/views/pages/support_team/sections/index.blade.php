@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header header-elements-inline">
             <h6 class="card-title">Manage Class Sections</h6>
-            {!! Qs::getPanelOptions() !!}
+{{--            {!! Qs::getPanelOptions() !!}--}}
         </div>
 
         <div class="card-body">

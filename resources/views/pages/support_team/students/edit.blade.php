@@ -4,9 +4,9 @@
 
         <div class="card">
             <div class="card-header bg-white header-elements-inline">
-                <h6 id="ajax-title" class="card-title">Please fill The form Below To Edit record of {{ $sr->user->name }}</h6>
+                <h6 id="ajax-title" class="card-title">Edit the records of {{ $sr->user->name }}</h6>
 
-                {!! Qs::getPanelOptions() !!}
+{{--                {!! Qs::getPanelOptions() !!}--}}
             </div>
 
             <form method="post" enctype="multipart/form-data" class="wizard-form steps-validation ajax-update" data-reload="#ajax-title" action="{{ route('students.update', Qs::hash($sr->id)) }}" data-fouc>

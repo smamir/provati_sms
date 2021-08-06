@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header header-elements-inline">
             <h5 class="card-title"><i class="icon-books mr-2"></i> Select Student Marksheet</h5>
-            {!! Qs::getPanelOptions() !!}
+{{--            {!! Qs::getPanelOptions() !!}--}}
         </div>
 
         <div class="card-body">
